@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <ImageView
+                    android:id="@+id/imageViewPlace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:elevation="16dp"
+                    android:src="@drawable/ic_baseline_arrow_back_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/product_sans_regular"
+                    android:text="Menu"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageViewPlace"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="55dp"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/bg_spinner"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/textViewDel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/product_sans_regular"
+                    android:text="Delivery"
+                    android:textColor="@color/green"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/spinner"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/group"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/textViewDel"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <EditText
+            android:id="@+id/editText"
+            style="@style/edit_search_style2"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:hint="Search product by name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBar"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editText">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView"
+                style="@style/image_rv_style"
+                android:adjustViewBounds="true"
+                android:src="@drawable/pizza" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/containerOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="left"
+                android:background="@drawable/bg_for_picture"
+                tools:ignore="RtlHardcoded">
+
+                <TextView
+                    android:id="@+id/textViewOffer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/product_sans_regular"
+                    android:text="Spend 25$, save $5"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/containerOffer2"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="end|bottom"
+                android:background="@drawable/bg_for_picture2"
+                tools:ignore="RtlHardcoded">
+
+                <TextView
+                    android:id="@+id/textViewOffer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/product_sans_regular"
+                    android:text="around, 30 minuts"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/textViewTypeFood"
+            style="@style/text_type_food_style"
+            android:text="@string/vegetarian_pizza"
+            app:layout_constraintBottom_toTopOf="@+id/textViewReview"
+            app:layout_constraintStart_toStartOf="@+id/cardView"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textViewOpen"
+            style="@style/text_open_close_style"
+            android:text="  Open"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewTypeFood"
+            app:layout_constraintStart_toEndOf="@+id/textViewTypeFood"
+            app:layout_constraintTop_toTopOf="@+id/textViewTypeFood"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textViewReview"
+            style="@style/text_review_style"
+            android:text=" 4.6"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDeliveryCost"
+            app:layout_constraintStart_toStartOf="@+id/textViewTypeFood"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTypeFood" />
+
+        <TextView
+            android:id="@+id/textViewReviewAmount"
+            style="@style/text_review_amount_style"
+            android:text="(601)"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewReview"
+            app:layout_constraintStart_toEndOf="@+id/textViewReview"
+            app:layout_constraintTop_toTopOf="@+id/textViewReview"
+            tools:ignore="RtlSymmetry" />
+
+
+        <TextView
+            android:id="@+id/textViewCountry"
+            style="@style/text_country_style"
+            android:text="Italian"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewReviewAmount"
+            app:layout_constraintStart_toEndOf="@+id/textViewReviewAmount"
+            app:layout_constraintTop_toTopOf="@+id/textViewReviewAmount" />
+
+        <TextView
+            android:id="@+id/textViewFoodKind"
+            style="@style/text_food_kind"
+            android:text="  Burgers"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewCountry"
+            app:layout_constraintStart_toEndOf="@+id/textViewCountry"
+            app:layout_constraintTop_toTopOf="@+id/textViewCountry" />
+
+        <TextView
+            android:id="@+id/textViewDeliveryCost"
+            style="@style/text_delivery_cost"
+            android:text="Delivery: Free"
+            app:layout_constraintStart_toStartOf="@+id/textViewReview"
+            app:layout_constraintTop_toBottomOf="@+id/textViewReview" />
+
+        <TextView
+            android:id="@+id/textViewMinMax"
+            style="@style/text_min_max_style"
+            android:text="   Minimum: $10"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewDeliveryCost"
+            app:layout_constraintStart_toEndOf="@+id/textViewDeliveryCost"
+            app:layout_constraintTop_toTopOf="@+id/textViewDeliveryCost" />
+
+
+        <TextView
+            android:id="@+id/btnTimeDelivery"
+            style="@style/text_more_style"
+            android:text="More info"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewTypeFood"
+            app:layout_constraintEnd_toEndOf="@+id/cardView"
+            app:layout_constraintTop_toTopOf="@+id/textViewTypeFood" />
+
+        <TextView
+            android:id="@+id/textViewDistance"
+            style="@style/text_km_style"
+            android:text="  0.8 km away"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewMinMax"
+            app:layout_constraintEnd_toEndOf="@+id/btnTimeDelivery" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/bg_spinner"
+            android:spinnerMode="dropdown"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDeliveryCost"
+            tools:ignore="DuplicateIds" />
+
+        <HorizontalScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:scrollbars="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinner1">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnDelivery"
+                    style="@style/btnDelivery"
+                    android:layout_margin="5dp"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/delivery"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintHorizontal_weight="1.5" />
+
+                <Button
+                    android:id="@+id/btnPickUp"
+                    style="@style/btnPickUp"
+                    android:layout_margin="5dp"
+                    android:text="@string/pick_up"
+                    app:backgroundTint="@color/white"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintHorizontal_weight="1" />
+
+                <Button
+                    android:id="@+id/btn_catering"
+                    style="@style/btnCatering"
+                    android:layout_margin="5dp"
+                    android:text="@string/catering"
+                    app:backgroundTint="@color/white"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintHorizontal_weight="1" />
+
+                <Button
+                    android:id="@+id/btn_curbside"
+                    style="@style/btnCurbside"
+                    android:layout_margin="5dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="@string/curbside"
+                    app:backgroundTint="@color/white"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintHorizontal_weight="1" />
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

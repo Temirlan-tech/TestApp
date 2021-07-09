@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="41dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView"
+            style="@style/image_rv_style"
+            android:adjustViewBounds="true"
+            android:src="@drawable/pizza" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:visibility="invisible"
+            android:id="@+id/containerOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:background="@drawable/bg_for_picture"
+            tools:ignore="RtlHardcoded">
+
+            <TextView
+                android:id="@+id/textViewOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spend 25$, save $5"
+                android:textColor="@color/white"
+                android:fontFamily="@font/product_sans_regular"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/textViewTypeFood"
+        style="@style/text_type_food_style"
+        android:text="@string/vegetarian_pizza"
+        app:layout_constraintBottom_toTopOf="@+id/textViewReview"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/textViewOpen"
+        style="@style/text_open_close_style"
+        android:text="  Open"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewTypeFood"
+        app:layout_constraintStart_toEndOf="@+id/textViewTypeFood"
+        app:layout_constraintTop_toTopOf="@+id/textViewTypeFood"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textViewReview"
+        style="@style/text_review_style"
+        android:text=" 4.6"
+        app:layout_constraintBottom_toTopOf="@+id/textViewDeliveryCost"
+        app:layout_constraintStart_toStartOf="@+id/textViewTypeFood"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTypeFood" />
+
+    <TextView
+        android:id="@+id/textViewReviewAmount"
+        style="@style/text_review_amount_style"
+        android:text="(601)"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewReview"
+        app:layout_constraintStart_toEndOf="@+id/textViewReview"
+        app:layout_constraintTop_toTopOf="@+id/textViewReview"
+        tools:ignore="RtlSymmetry" />
+
+
+    <TextView
+        android:id="@+id/textViewCountry"
+        style="@style/text_country_style"
+        android:text="Italian"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewReviewAmount"
+        app:layout_constraintStart_toEndOf="@+id/textViewReviewAmount"
+        app:layout_constraintTop_toTopOf="@+id/textViewReviewAmount" />
+
+    <TextView
+        android:id="@+id/textViewFoodKind"
+        style="@style/text_food_kind"
+        android:text="  Burgers"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewCountry"
+        app:layout_constraintStart_toEndOf="@+id/textViewCountry"
+        app:layout_constraintTop_toTopOf="@+id/textViewCountry" />
+
+    <TextView
+        android:id="@+id/textViewDeliveryCost"
+        style="@style/text_delivery_cost"
+        android:text="Delivery: Free"
+        app:layout_constraintStart_toStartOf="@+id/textViewReview"
+        app:layout_constraintTop_toBottomOf="@+id/textViewReview" />
+
+    <TextView
+        android:id="@+id/textViewMinMax"
+        style="@style/text_min_max_style"
+        android:text="   Minimum: $10"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDeliveryCost"
+        app:layout_constraintStart_toEndOf="@+id/textViewDeliveryCost"
+        app:layout_constraintTop_toTopOf="@+id/textViewDeliveryCost" />
+
+
+    <Button
+        android:id="@+id/btnTimeDelivery"
+        style="@style/btn_time_del_style"
+        android:text="@string/_10_15min"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewTypeFood"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="@+id/textViewTypeFood" />
+
+    <TextView
+        android:id="@+id/textViewDistance"
+        style="@style/text_km_style"
+        android:text="  0.8 km away"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewMinMax"
+        app:layout_constraintEnd_toEndOf="@+id/btnTimeDelivery" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

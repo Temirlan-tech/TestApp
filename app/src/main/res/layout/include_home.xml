@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/fragment_home">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <ImageView
+                    android:id="@+id/imageViewPlace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:elevation="16dp"
+                    android:src="@drawable/ic_indicator"
+                    app:layout_constraintBottom_toBottomOf="@+id/spinner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/spinner" />
+
+                <com.skydoves.powerspinner.PowerSpinnerView
+                    android:id="@+id/spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:elevation="16dp"
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:textColor="#353536"
+                    android:hint="@string/address"
+                    android:textColorHint="@color/black"
+                    android:textSize="14.5sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:spinner_arrow_animate="true"
+                    app:spinner_arrow_animate_duration="250"
+                    app:spinner_arrow_drawable="@drawable/ic_arrow_down"
+                    app:spinner_arrow_gravity="end"
+                    app:spinner_arrow_padding="8dp"
+                    app:spinner_arrow_tint="@android:color/black"
+                    app:spinner_divider_color="@android:color/darker_gray"
+                    app:spinner_divider_show="true"
+                    app:spinner_divider_size="0.4dp"
+                    app:spinner_item_array="@array/branches"
+                    app:spinner_popup_animation="fade"
+                    app:spinner_popup_background="@android:color/white"
+                    app:spinner_popup_elevation="14dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView"
+            android:scrollbars="none"
+            android:padding="10dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBar"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+        <Button
+            android:layout_marginStart="12dp"
+            android:id="@+id/btnDelivery"
+            style="@style/btnDelivery"
+            android:layout_margin="5dp"
+            app:layout_constraintHorizontal_weight="1.5"
+            android:text="@string/delivery"
+            app:cornerRadius="20dp" />
+
+        <Button
+            android:id="@+id/btnPickUp"
+            app:layout_constraintHorizontal_weight="1"
+            style="@style/btnPickUp"
+            android:text="@string/pick_up"
+            app:backgroundTint="@color/white"
+            android:layout_margin="5dp"
+            app:cornerRadius="20dp" />
+
+        <Button
+            android:id="@+id/btn_catering"
+            app:layout_constraintHorizontal_weight="1"
+            style="@style/btnCatering"
+            android:text="@string/catering"
+            app:backgroundTint="@color/white"
+            android:layout_margin="5dp"
+            app:cornerRadius="20dp" />
+
+        <Button
+            android:id="@+id/btn_curbside"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintHorizontal_weight="1"
+            style="@style/btnCurbside"
+            android:text="@string/curbside"
+            app:backgroundTint="@color/white"
+            android:layout_margin="5dp"
+            app:cornerRadius="20dp" />
+            </LinearLayout>
+
+        </HorizontalScrollView>
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollView">
+
+<!--            <requestFocus />-->
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/edit_search_style"
+                android:hint="@string/find_store_by_name" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/relativeLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

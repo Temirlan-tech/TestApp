@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Search</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="orders">Orders</string>
+    <string name="delivery">Delivery</string>
+    <string name="pick_up">Pick up</string>
+    <string name="catering">Catering</string>
+    <string name="curbside">Curbside</string>
+    <string name="find_store_by_name">Find store by name</string>
+    <string name="vegetarian_pizza">Vegetarian Pizza</string>
+    <string name="_10_15min">10 - 15min</string>
+
+
+    <string-array name="branches">
+        <item>225 Central Park West, NY 10024, USA</item>
+        <item>33rd Street, Baltimore, USA</item>
+        <item>California State Route 13, USA</item>
+        <item>California State Route 15, NY 10024, USA</item>
+        <item>37rd Street, Baltimore, USA</item>
+    </string-array>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="takeaways">Takeaways</string>
+    <string name="pharmacy">Pharmacy</string>
+    <string name="grocery">Grocery</string>
+    <string name="convenience">Convenience</string>
+    <string name="address">Address</string>
+
+</resources>
